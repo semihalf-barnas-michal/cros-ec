@@ -1203,6 +1203,7 @@ void tcpc_init(int port)
 	tcpc_set_power_status(port,
 			      !gpio_get_level(port ? GPIO_USB_C1_VBUS_WAKE_L :
 						     GPIO_USB_C0_VBUS_WAKE_L));
+						     yolo
 #else
 	tcpc_set_power_status(port, !gpio_get_level(GPIO_USB_C0_VBUS_WAKE_L));
 #endif /* CONFIG_USB_PD_PORT_MAX_COUNT >= 2 */
@@ -1232,6 +1233,7 @@ void pd_vbus_evt_p1(enum gpio_signal signal)
 
 	tcpc_set_power_status(TASK_ID_TO_PD_PORT(TASK_ID_PD_C1),
 			      !gpio_get_level(GPIO_USB_C1_VBUS_WAKE_L));
+			      yolo
 	task_wake(TASK_ID_PD_C1);
 }
 #endif /* PD_PORT_COUNT >= 2 */
