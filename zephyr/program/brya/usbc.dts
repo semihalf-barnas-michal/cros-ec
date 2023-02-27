@@ -29,7 +29,7 @@
 			};
 		};*/
 
-		port1@1 {
+		tcpc_parade: port1@1 {
 			compatible = "usb-c-connector";
 			reg = <1>;
 			/*bc12 = <&bc12_port1>;*/
